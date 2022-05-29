@@ -1,0 +1,92 @@
+/* #### General  #### */
+
+.image-container {text-align: center;}
+.card-wrapper, .card-holder {margin-top: $hugeSpace; margin-bottom: $hugeSpace;}
+
+
+/* #### Nav  #### */
+[title="customMenuelement-hidden"]{
+    display: none !important;
+}
+
+/* #### LOGO  #### */
+
+a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: $smallSpace; margin-bottom: $smallSpace; }
+
+
+/* ### POST ENTRIES ON HOMEPAGE */
+
+.custom-postentry-col {margin-top: $hugeSpace; margin-bottom: $hugeSpace; }
+.image-container {margin-top: $largeSpace; margin-bottom: $largeSpace; text-align: center;}
+.card {box-shadow: 0 1px 3px rgb(34 40 49 / 20%); border-radius: 3px; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out; padding: 3rem 2.75rem;}
+.text-container {margin-top: 10px; margin-bottom: 0px;}
+.entry-header {margin-bottom: $Space;}
+
+/* #### Form Styles #### */
+
+
+.gfield {margin-top: $smallSpace; margin-bottom: $smallSpace}
+body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {margin-top: $largeSpace;}
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{
+	background-color: transparent !important;
+	text-transform: uppercase !important;
+	border-radius: 0;
+	border: 2px solid $primary;
+	color: $primary;
+	height: 45px;
+	outline: none;
+}
+
+
+
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select, textarea {
+
+	padding-left: $smallSpace !important;
+	margin-top: $largeSpace; margin-bottom: $largeSpace;
+}
+
+
+form label.gfield_label {display: none !important;}
+.gform_wrapper textarea.medium { width: calc(50% - 8px) !important; }
+
+/* gfield html comments  */
+.gfield_html_formatted {display: block;}
+
+input[type="submit"]{
+    width: 200px;
+    cursor: pointer;
+    margin-top: $Space;
+    padding: 10px $largeSpace 11px;
+    border-style: solid;
+    border-color: $primary;
+    border-width: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 3px;
+    border-radius: 2px;
+    background: $primary;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+
+input[type="submit"]:hover {
+    background: #fff !important;
+    color: $primary !important;
+    border-color: $primary;
+
+}   
