@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/******************COMPILATION OF CSS AN JS ***********************/
+/* use "npm run dist or npm run watch for css and js compilation */
 /* #### COLOR SETTINGS #### */
 /* #### Spaces #### */
 *,
@@ -119,12 +121,12 @@ sup {
 }
 
 a {
-  color: #102985;
+  color: #E37222;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #081441;
+  color: #a45015;
   text-decoration: underline;
 }
 
@@ -331,7 +333,7 @@ template {
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #102985;
+  --primary: #E37222;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -406,21 +408,21 @@ template {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #bcc3dd;
+  background-color: #f7d8c1;
 }
 .table-primary th,
 .table-primary td,
 .table-primary thead th,
 .table-primary tbody + tbody {
-  border-color: #8390c0;
+  border-color: #f0b68c;
 }
 
 .table-hover .table-primary:hover {
-  background-color: #abb4d4;
+  background-color: #f4caaa;
 }
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: #abb4d4;
+  background-color: #f4caaa;
 }
 
 .table-secondary,
@@ -937,12 +939,12 @@ mark,
 
 .has-primary-color,
 .has-primary-color:visited {
-  color: #102985;
+  color: #E37222;
 }
 
 .has-primary-background-color {
-  background-color: #102985;
-  border-color: #102985;
+  background-color: #E37222;
+  border-color: #E37222;
 }
 
 .has-secondary-color,

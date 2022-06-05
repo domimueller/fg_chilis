@@ -1,15 +1,15 @@
 <?php
 /**
- * Template Name: Partner Template
+ * Template Name: Standort Template
  *
- * Template für die Darstellung der Partner
+ * Template für die Darstellung der locations
  *
  * @package Understrap
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-global $partners;
+global $locations;
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
@@ -42,7 +42,7 @@ if ( is_front_page() ) {
 
 					
 						$args = array(
-	    					'post_type'  => 'domi_partners_cpt',
+	    					'post_type'  => 'domi_location_cpt',
 	    					'numberposts' => -1,
 	    					'post_status' => 'publish', 
     						'orderby' => 'menu_order', 
@@ -52,16 +52,15 @@ if ( is_front_page() ) {
 
 					?>
 					
-					<div class="row partner-row card-holder ">
+					<div class="row location-row card-holder">
 					<?php
 
-					$partner = get_posts( $args );
-
-					foreach ($partner as $partner ) {
-						get_template_part( 'loop-templates/content', 'partners' );	
+					$locations = get_posts( $args );
+					foreach ($locations as $location ) {
+						get_template_part( 'loop-templates/content', 'locations' );	
 					}
 					?>
-					</div> <!-- partner row-->
+					</div> <!-- location row-->
 
 				</main><!-- #main -->
 

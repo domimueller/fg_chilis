@@ -1,5 +1,10 @@
-# Wordpress Theme For Seisa 08
-Includes specific Template for Sponsors, Events and Teams
+# Wordpress Theme For Füürgüggù
+Includes specific Template for Products, Partner, Events and Teammember 
 
 To hide a Nav Element go to Design -> Menu and use the html title attribut customMenuelement-hidden to hide a nav element
+
+How to Change css/ js
+- edit styles in src/sass/theme and js in src/js
+-  use "npm run dist or npm run watch for css and js compilation
+
 
