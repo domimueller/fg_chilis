@@ -101,7 +101,7 @@ if ( is_front_page() ) {
 					<div class="col-sm-12">
 						<div class="row partner-row ">
 							<div class="title-col col-sm-12">
-								<h2>Unsere Partner </h2>
+								<h2>Unsere Partner </h2> 
 							</div>	
 
 						<?php
