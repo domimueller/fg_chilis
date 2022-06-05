@@ -99,15 +99,15 @@ if ( is_front_page() ) {
 					?>
 					
 					<div class="col-sm-12">
-						<div class="row sponsor-row ">
+						<div class="row partner-row ">
 							<div class="title-col col-sm-12">
-								<h2>Unsere Hauptsponsoren </h2>
+								<h2>Unsere Partner </h2>
 							</div>	
 
 						<?php
 
 							$args = array(
-		    					'post_type'  => 'domi_sponsors_cpt',
+		    					'post_type'  => 'domi_partners_cpt',
 		    					'numberposts' => -1,
 		    					'post_status' => 'publish', 
 	    						'orderby' => 'menu_order', 
@@ -116,16 +116,16 @@ if ( is_front_page() ) {
 							);
 
 
-						$sponsors = get_posts( $args );
+						$partners = get_posts( $args );
 						
 						?>
 
 						<?php 
-						foreach ($sponsors as $sponsor ) {
-							get_template_part( 'loop-templates/content', 'sponsors' );	
+						foreach ($partners as $partner ) {
+							get_template_part( 'loop-templates/content', 'partners' );	
 						}
 						?>
-						</div> <!-- sponsor row-->
+						</div> <!-- partner row-->
 					</div> <!-- col -->
 
 

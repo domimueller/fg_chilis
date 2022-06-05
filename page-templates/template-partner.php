@@ -1,15 +1,15 @@
 <?php
 /**
- * Template Name: Sponsor Template
+ * Template Name: partner Template
  *
- * Template für die Darstellung der Sponsoren
+ * Template für die Darstellung der Partner
  *
  * @package Understrap
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-global $sponsors;
+global $partners;
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
@@ -42,7 +42,7 @@ if ( is_front_page() ) {
 
 					
 						$args = array(
-	    					'post_type'  => 'domi_sponsors_cpt',
+	    					'post_type'  => 'domi_partners_cpt',
 	    					'numberposts' => -1,
 	    					'post_status' => 'publish', 
     						'orderby' => 'menu_order', 
@@ -52,15 +52,16 @@ if ( is_front_page() ) {
 
 					?>
 					
-					<div class="row sponsor-row card-holder ">
+					<div class="row partner-row card-holder ">
 					<?php
 
-					$sponsors = get_posts( $args );
-					foreach ($sponsors as $sponsor ) {
-						get_template_part( 'loop-templates/content', 'sponsors' );	
+					$partner = get_posts( $args );
+
+					foreach ($partner as $partner ) {
+						get_template_part( 'loop-templates/content', 'partners' );	
 					}
 					?>
-					</div> <!-- sponsor row-->
+					</div> <!-- partner row-->
 
 				</main><!-- #main -->
 
