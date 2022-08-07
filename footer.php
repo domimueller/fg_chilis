@@ -25,13 +25,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<footer class="site-footer" id="colophon">
 
-					<div class="site-info">
+					<div class="site-info row">
 
+						<div class="site-info first-footer-part col-sm-8">
 
-						<a href="https://www.instagram.com/fcseisa_08/" target="_blank">Seisa 08 auf Instagram</a><span class="sep"> | </span> Allez Seisa!  <span class="sep"> | </span> <a href="https://club.football.ch/club/spielbetrieb/aktuelle-spiele.aspx/v-875798"  target="_blank">Seisa 08 auf club.football.ch</a>
+							<a href="https://www.instagram.com/fg_chilis/" target="_blank">Füürgüggù auf Instagram </a>
+							<div class="spicy-footer-container">
+								<?php 
+									$active = get_field('options_spicy_active', 'option');
+									$active = $active['url'];	
+								?>
+									<img src="<?=$active?>" />
+									<img src="<?=$active?>" />
+									<img src="<?=$active?>" />						
+							</div>
 
+						</div>
+
+						<div class="site-info second-footer-part  col-sm-4">
+							<?php the_custom_logo();?>
+						</div>
 
 					</div><!-- .site-info -->
+
 
 				</footer><!-- #colophon -->
 

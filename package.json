@@ -63,6 +63,7 @@
     "understrap": "github:understrap/understrap#develop"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "node": "^17.7.2",
     "npx": "^10.2.2"
   }

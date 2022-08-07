@@ -7,4 +7,6 @@ How to Change css/ js
 - edit styles in src/sass/theme and js in src/js
 -  use "npm run dist or npm run watch for css and js compilation
 
+Compatible with Font Awesome Version 5 free icons https://fontawesome.com/v5/search
+
 
