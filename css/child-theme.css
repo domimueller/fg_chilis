@@ -13871,7 +13871,7 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 /* #### General  #### */
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
   color: #ba041c;
 }
 
@@ -13889,14 +13889,32 @@ h1, h2, h3 {
   margin-bottom: 40px;
 }
 
+.tooltip-holder {
+  color: #212549;
+  cursor: pointer;
+  display: inline-block;
+}
+
 /* #### Nav  #### */
 [title=customMenuelement-hidden] {
   display: none !important;
 }
 
-/* #### home #### */
-/* hero slider */
-.carousel.slide .wp-block-cover__inner-container p {
+nav#main-nav.navbar .navbar-nav .nav-link {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+nav#main-nav.navbar .navbar-nav .nav-link {
+  color: #fff;
+}
+
+nav#main-nav.navbar .navbar-nav .active .nav-link, nav#main-nav.navbar .navbar-nav .nav-link:hover {
+  text-decoration: underline;
+}
+
+nav#main-nav.navbar .navbar-nav .nav-link:hover .carousel.slide .wp-block-cover__inner-container p,
+.wp-block-cover p:not(.has-text-color) {
   color: #fff !important;
 }
 
@@ -13906,7 +13924,7 @@ h1, h2, h3 {
   z-index: 10;
 }
 
-.custom-slidercontroller-container i {
+.custom-slidercontroller-container svg {
   position: absolute;
   top: -70px;
   font-size: 70px;
@@ -13920,23 +13938,23 @@ h1, h2, h3 {
   margin-top: 30px;
 }
 
-/* #### Accordion  #### */
-/* custom-accordion-button  */
-.accordion-buttton-holder {
-  display: block;
-  width: 100%;
+/* #### Chilis and Locations ####*/
+.location-container {
+  cursor: pointer;
 }
 
-.custom-accordion-button {
-  font-size: 2rem;
-  color: #212529;
+.spicy-degree-container, .location-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
-.custom-accordion i {
-  color: #ba041c;
-  float: right;
-  display: inline-block;
-  padding: 7px 12px;
+.image-container {
+  margin-top: 15px;
+}
+
+.button-container {
+  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 /* spicy */
@@ -13949,7 +13967,7 @@ h1, h2, h3 {
   margin-left: 15px;
 }
 
-.spicy-footer-container img {
+spicy-degree-container img {
   cursor: pointer;
   padding: 0;
   -webkit-animation-duration: 1s;
@@ -13960,12 +13978,34 @@ h1, h2, h3 {
   animation-timing-function: ease-in-out;
 }
 
-.spicy-footer-container img:hover {
+spicy-degree-container img:hover {
   -webkit-animation-name: bounce;
   animation-name: bounce;
   -moz-animation-name: bounce;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
+}
+
+/*Footer*/
+#wrapper-footer {
+  background-color: #ba041c;
+}
+
+.site-footer a {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.first-footer-part a {
+  display: inline-block;
+  margin-top: 65px;
+}
+
+footer a.custom-logo-link {
+  max-height: 150px;
+  max-width: 150px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* #### LOGO  #### */
@@ -14040,9 +14080,28 @@ footer .navbar-brand:hover {
 }
 
 /* #### Form Styles #### */
-.gfield {
-  margin-top: 15px;
-  margin-bottom: 15px;
+.gform_wrapper .gfield_description {
+  color: #ba041c;
+}
+
+/* layout and halfsize*/
+body .gform_wrapper ul.gform_fields li.gfield {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-right: 40px;
+}
+
+.gfield.halfsize {
+  width: 45%;
+}
+
+body .gform_wrapper .top_label .ginput_container input.small, body .gform_wrapper .top_label input.medium, body .gform_wrapper .top_label select.medium {
+  width: 100%;
+}
+
+.gform_wrapper ul li.gfield.halfsize {
+  clear: none;
+  float: left;
 }
 
 body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {
@@ -14051,7 +14110,6 @@ body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {
 
 input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=range], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea, select {
   background-color: transparent !important;
-  text-transform: uppercase !important;
   border-radius: 0;
   border: 2px solid #ba041c;
   color: #ba041c;
@@ -14059,8 +14117,7 @@ input[type=date], input[type=datetime], input[type=datetime-local], input[type=e
   outline: none;
 }
 
-input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=range], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea, select, textarea {
-  padding-left: 15px !important;
+li.gfield {
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -14089,7 +14146,6 @@ input[type=submit] {
   border-radius: 2px;
   background: #ba041c;
   color: #fff;
-  text-transform: uppercase;
   font-weight: normal;
   transition: all 0.3s ease-in-out;
   -webkit-appearance: none;
@@ -14106,21 +14162,46 @@ input[type=submit]:hover {
   border-color: #ba041c;
 }
 
-/*Footer*/
-.site-footer a {
-  margin-right: 5px;
+/* #### Buttons etc #### */
+a:focus, input:focus, textarea:focus, button:focus {
+  outline: 2px solid #ba041c !important;
 }
 
-.first-footer-part a {
+a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[type=button]:focus, input[type=reset]:focus, input[type=submit]:focus, input[type=email]:focus, input[type=tel]:focus, input[type=url]:focus, input[type=password]:focus, input[type=search]:focus {
+  outline-color: #ba041c !important;
+}
+
+.customBoutton.moreInformation span {
   display: inline-block;
-  margin-top: 65px;
+  margin-right: 8px;
 }
 
-footer a.custom-logo-link {
-  max-height: 150px;
-  max-width: 150px;
-  margin-top: 0;
-  margin-bottom: 0;
+.customBoutton, .btn-info, .woocommerce-info a.button, body.page-template-template-sell .gform_button.button {
+  width: 230px;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 30px 11px;
+  border-style: solid;
+  border-color: #ba041c;
+  border-width: 2px;
+  border-radius: 2px;
+  background: #ba041c;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+  transition: all 0.3s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.customBoutton:hover, body.post-type-archive-inseratposttype .btn-info:hover, body.post-type-archive-inseratposttype .woocommerce-info a.button:hover, .woocommerce-info body.post-type-archive-inseratposttype a.button:hover, body.post-type-archive-inseratposttype .btn-info:focus, body.post-type-archive-inseratposttype .woocommerce-info a.button:focus, .woocommerce-info body.post-type-archive-inseratposttype a.button:focus, body.post-type-archive-inseratposttype .btn-info:active, body.post-type-archive-inseratposttype .woocommerce-info a.button:active, .woocommerce-info body.post-type-archive-inseratposttype a.button:active, .btn-info:not(:disabled):not(.disabled).active, .woocommerce-info a.button:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .woocommerce-info a.button:not(:disabled):not(.disabled):active, .show > .btn-info.dropdown-toggle, .woocommerce-info .show > a.dropdown-toggle.button, body.page-template-template-sell .gform_wrapper .button:hover, body.page-template-template-sell .gform_button:hover, body.page-template-template-sell .gform_button:focus {
+  background: #fff !important;
+  color: #ba041c !important;
+  border-color: #ba041c;
 }
 
 /* effects*/

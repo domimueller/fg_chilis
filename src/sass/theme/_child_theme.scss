@@ -1,9 +1,12 @@
 /* #### General  #### */
 
-h1, h2, h3 {color: $primary;}
+h1, h2, h3, h4, h5 {color: $primary;}
 .image-container {text-align: center;}
 .location-desc, .chili-types {margin-top: $Space; margin-bottom: $hugeSpace;}
 .card-wrapper, .card-holder {margin-top: $hugeSpace; margin-bottom: $hugeSpace;}
+
+.tooltip-holder {color:#212549; cursor: pointer; display:inline-block;} 
+
 
 
 /* #### Nav  #### */
@@ -11,23 +14,30 @@ h1, h2, h3 {color: $primary;}
     display: none !important;
 }
 
+nav#main-nav.navbar .navbar-nav .nav-link {padding-left: 10px; padding-right:10px;}
+nav#main-nav.navbar .navbar-nav .nav-link {color:#fff;}
+nav#main-nav.navbar .navbar-nav .active  .nav-link, nav#main-nav.navbar .navbar-nav .nav-link:hover  {text-decoration: underline;}
+nav#main-nav.navbar .navbar-nav .nav-link:hover 
 
 /* #### home #### */
 
 /* hero slider */
-.carousel.slide .wp-block-cover__inner-container p {color:#fff !important;}
+.carousel.slide .wp-block-cover__inner-container p, .wp-block-cover p:not(.has-text-color) {color:#fff !important;}
 
 .custom-slidercontroller-container {width: 100%; position: relative; z-index:10;}
-.custom-slidercontroller-container i {position: absolute; top: -70px; font-size:70px; color: #fff; width: 100%; text-align: center;z-index:10;}
+.custom-slidercontroller-container svg {position: absolute; top: -70px; font-size:70px; color: #fff; width: 100%; text-align: center;z-index:10;}
 
 .partner-row {margin-top: $largeSpace;}
 
-/* #### Accordion  #### */
 
-/* custom-accordion-button  */
-.accordion-buttton-holder {display: block; width: 100%;}
-.custom-accordion-button {font-size: 2rem; color: #212529;}
-.custom-accordion i {color: $primary; float: right; display: inline-block; padding: 7px 12px;}
+/* #### Chilis and Locations ####*/
+.location-container {cursor:pointer;}
+
+
+.spicy-degree-container, .location-container {margin-bottom: $smallSpace; margin-top: $smallSpace;}
+.image-container {margin-top: $smallSpace;}
+.button-container {margin-bottom: $smallSpace; margin-top: $Space;}
+
 
 /* spicy */
 .spicy-degree-container img, .spicy-footer-container img {max-width: 15px;}
@@ -35,7 +45,7 @@ h1, h2, h3 {color: $primary;}
 .spicy-footer-container {display: inline-block; margin-left:15px;}
 
 
-.spicy-footer-container img {
+spicy-degree-container img {
     cursor: pointer;
     padding:0;
     -webkit-animation-duration: 1s;
@@ -46,12 +56,24 @@ h1, h2, h3 {color: $primary;}
     animation-timing-function: ease-in-out;
 }
 
-.spicy-footer-container img:hover {
+spicy-degree-container img:hover {
     animation-name: bounce;
     -moz-animation-name: bounce;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;    
 }
+
+
+/*Footer*/
+
+
+#wrapper-footer {background-color: $primary;}
+
+.site-footer a {margin-right: 5px; color: #fff; }
+.first-footer-part a{display:inline-block; margin-top:65px;}
+footer a.custom-logo-link {max-height: 150px; max-width: 150px; margin-top:0; margin-bottom:0; }
+
+
 
 
 /* #### LOGO  #### */
@@ -103,12 +125,20 @@ footer .navbar-brand:hover {
 /* #### Form Styles #### */
 
 
-.gfield {margin-top: $smallSpace; margin-bottom: $smallSpace}
+.gform_wrapper .gfield_description {color: $primary;}
+
+
+/* layout and halfsize*/
+
+body .gform_wrapper ul.gform_fields li.gfield {margin-top: $largeSpace; margin-bottom: $largeSpace; padding-right: $hugeSpace;}
+.gfield.halfsize {width: 45%;}
+body .gform_wrapper .top_label .ginput_container input.small, body  .gform_wrapper .top_label input.medium, body .gform_wrapper .top_label select.medium {width: 100%;}
+.gform_wrapper ul li.gfield.halfsize {clear:none; float: left;}
+
 body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {margin-top: $largeSpace;}
 
 input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{
 	background-color: transparent !important;
-	text-transform: uppercase !important;
 	border-radius: 0;
 	border: 2px solid $primary;
 	color: $primary;
@@ -119,11 +149,8 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"],  input
 
 
 
-input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select, textarea {
+li.gfield {margin-top: $largeSpace; margin-bottom: $largeSpace;}
 
-	padding-left: $smallSpace !important;
-	margin-top: $largeSpace; margin-bottom: $largeSpace;
-}
 
 
 form label.gfield_label {display: none !important;}
@@ -145,7 +172,6 @@ input[type="submit"]{
     border-radius: 2px;
     background: $primary;
     color: #fff;
-    text-transform: uppercase;
     font-weight: normal;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -169,10 +195,19 @@ input[type="submit"]:hover {
 
 }   
 
-/*Footer*/
-.site-footer a {margin-right: 5px;}
-.first-footer-part a{display:inline-block; margin-top:65px;}
-footer a.custom-logo-link {max-height: 150px; max-width: 150px; margin-top:0; margin-bottom:0; }
+
+/* #### Buttons etc #### */
+
+a:focus, input:focus, textarea:focus, button:focus {outline: 2px solid $primary !important ;}
+a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus { outline-color:$primary !important }
+
+.customBoutton.moreInformation span {display:inline-block; margin-right: 8px;}
+
+.customBoutton, .btn-info,  body.page-template-template-sell .gform_button.button{ width: 230px; cursor: pointer; margin-top: 20px; padding: 10px 30px 11px; border-style: solid; border-color: $primary; border-width: 2px; -webkit-border-radius: 2px; -moz-border-radius: 3px; border-radius: 2px; background: $primary; color: #fff; text-transform: uppercase; font-weight: normal; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; -ms-border-radius: 3px; -o-border-radius: 3px;}
+.customBoutton:hover, body.post-type-archive-inseratposttype .btn-info:hover, body.post-type-archive-inseratposttype .btn-info:focus, body.post-type-archive-inseratposttype .btn-info:active, .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle,  body.page-template-template-sell .gform_wrapper .button:hover, body.page-template-template-sell .gform_button:hover, body.page-template-template-sell .gform_button:focus  {background: #fff !important; color: $primary !important; border-color: $primary}
+
+
+
 
 
 

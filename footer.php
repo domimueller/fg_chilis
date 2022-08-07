@@ -30,15 +30,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="site-info first-footer-part col-sm-8">
 
 							<a href="https://www.instagram.com/fg_chilis/" target="_blank">Füürgüggù auf Instagram </a>
-							<div class="spicy-footer-container">
-								<?php 
-									$active = get_field('options_spicy_active', 'option');
-									$active = $active['url'];	
-								?>
-									<img src="<?=$active?>" />
-									<img src="<?=$active?>" />
-									<img src="<?=$active?>" />						
-							</div>
 
 						</div>
 

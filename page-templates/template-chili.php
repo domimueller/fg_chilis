@@ -1,25 +1,23 @@
 <?php
 /**
- * Template Name: Chilisorten Template
+ * Template Name: Chili Template
  *
- * Template für die Darstellung der Chilisorten
+ * Template für die Darstellung der Chilis
  *
  * @package Understrap
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
-
+global $chili;
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
 if ( is_front_page() ) {
-	//get_template_part( 'global-templates/hero' );
+	get_template_part( 'global-templates/hero' );
 }
 ?>
-
 
 <div class="wrapper" id="full-width-page-wrapper">
 
@@ -41,10 +39,28 @@ if ( is_front_page() ) {
 							comments_template();
 						}
 					}
+
 					
+						$args = array(
+	    					'post_type'  => 'domi_chili_cpt',
+	    					'numberposts' => -1,
+	    					'post_status' => 'publish', 
+    						'orderby' => 'menu_order', 
+    						'order' => 'ASC', 
 
-					get_template_part( 'loop-templates/content', 'chilitypes-accordeon' );?>			
+						);
 
+					?>
+					
+					<div class="row chili-row card-holder">
+					<?php
+
+					$chilis = get_posts( $args );
+					foreach ($chilis as $chili ) {
+						get_template_part( 'loop-templates/content', 'chilis' );	
+					}
+					?>
+					</div> <!-- chili row-->
 
 				</main><!-- #main -->
 
