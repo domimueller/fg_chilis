@@ -13913,20 +13913,55 @@ nav#main-nav.navbar .navbar-nav .active .nav-link, nav#main-nav.navbar .navbar-n
   text-decoration: underline;
 }
 
-nav#main-nav.navbar .navbar-nav .nav-link:hover .carousel.slide .wp-block-cover__inner-container p,
-.wp-block-cover p:not(.has-text-color) {
+/* #### home #### */
+/* home nav*/
+body.home nav {
+  background-color: transparent !important;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  min-height: 166px;
+  width: 100%;
+}
+
+/* hero slider */
+.carousel {
+  max-height: 100vh;
+}
+
+.carousel.slide .wp-block-cover__inner-container p, .wp-block-cover p:not(.has-text-color) {
   color: #fff !important;
+  font-size: 2rem;
+}
+
+body .carousel-control-prev:focus, body .carousel-control-prev:active, body .carousel-control-next:focus, body .carousel-control-next:active, a.navbar-brand:focus, body.home .menu-item a:focus, .image-container a:focus {
+  outline: none !important;
 }
 
 .custom-slidercontroller-container {
   width: 100%;
   position: relative;
   z-index: 10;
+  cursor: pointer;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+.custom-slidercontroller-container:hover {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 
 .custom-slidercontroller-container svg {
   position: absolute;
-  top: -70px;
+  top: -75px;
   font-size: 70px;
   color: #fff;
   width: 100%;
@@ -13934,8 +13969,67 @@ nav#main-nav.navbar .navbar-nav .nav-link:hover .carousel.slide .wp-block-cover_
   z-index: 10;
 }
 
-.partner-row {
+/* home layount*/
+.partner-row, .facts-row, .custom-postentry-row {
   margin-top: 30px;
+}
+
+.facts-row, .custom-postentry-row {
+  margin-bottom: 30px;
+}
+
+.facts-row .title-col {
+  margin-bottom: 15px;
+}
+
+/* partner*/
+.partner-col .button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.partner-col .image-container {
+  margin-bottom: 40px;
+}
+
+/* facts */
+.fact-col {
+  text-align: center;
+}
+
+.facts-row span.fact-icon svg {
+  font-size: 50px;
+}
+
+.facts-row h5 {
+  color: #212529;
+}
+
+.fact-icon {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.fact-col {
+  cursor: pointer;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+.fact-col:hover {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.fact-col:hover svg, .fact-col:hover h5 {
+  color: #ba041c;
 }
 
 /* #### Chilis and Locations ####*/
@@ -14084,28 +14178,53 @@ footer .navbar-brand:hover {
   color: #ba041c;
 }
 
-/* layout and halfsize*/
+body .gform_wrapper .gsection {
+  border-bottom: 0px solid #ccc;
+}
+
 body .gform_wrapper ul.gform_fields li.gfield {
   margin-top: 30px;
   margin-bottom: 30px;
   padding-right: 40px;
 }
 
-.gfield.halfsize {
-  width: 45%;
-}
-
-body .gform_wrapper .top_label .ginput_container input.small, body .gform_wrapper .top_label input.medium, body .gform_wrapper .top_label select.medium {
+/*section title*/
+/*will be overwriten for desktops. only important for mobile*/
+body .gform_wrapper ul.gform_fields li.gfield.gsection {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  float: left;
   width: 100%;
 }
 
-.gform_wrapper ul li.gfield.halfsize {
-  clear: none;
-  float: left;
+.gform_wrapper ul.gform_fields li.gfield.fullsize {
+  width: 100%;
+}
+
+.gform_wrapper ul.gform_fields li.gfield.fullsize, body .gform_wrapper ul.gform_fields li.gfield {
+  padding-right: 0;
+}
+
+body .gform_wrapper .top_label .ginput_container input.small, body .gform_wrapper .top_label input.medium, body .gform_wrapper .top_label select {
+  width: 100%;
+}
+
+/*will be overwriten for desktops. only important for mobile*/
+body .gform_wrapper .ginput_container textarea {
+  width: 100%;
 }
 
 body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {
   margin-top: 30px;
+}
+
+li.gfield {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+form label.gfield_label, form .instruction {
+  display: none !important;
 }
 
 input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=range], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea, select {
@@ -14115,19 +14234,6 @@ input[type=date], input[type=datetime], input[type=datetime-local], input[type=e
   color: #ba041c;
   height: 45px;
   outline: none;
-}
-
-li.gfield {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-form label.gfield_label {
-  display: none !important;
-}
-
-.gform_wrapper textarea.medium {
-  width: calc(50% - 8px) !important;
 }
 
 /* gfield html comments  */
@@ -14204,7 +14310,41 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   border-color: #ba041c;
 }
 
-/* effects*/
+/* #### RESPONSIVE #### */
+/* DESKTOP ONLY */
+@media (min-width: 992px) {
+  body .gform_wrapper ul li.gfield.halfsize {
+    width: 45%;
+  }
+  .gform_wrapper ul.gform_fields li.gfield {
+    clear: none;
+    float: left;
+  }
+  body .gform_wrapper .ginput_container textarea {
+    width: 90%;
+  }
+  body .gform_wrapper ul.gform_fields li.gfield.gsection {
+    margin-bottom: 0;
+  }
+  .gform_wrapper ul.gform_fields li.gfield.fullsize, body .gform_wrapper ul.gform_fields li.gfield {
+    padding-right: 40px;
+  }
+}
+/* XS ONLY (Phone) */
+@media (max-width: 576px) {
+  body #wrapper-footer {
+    text-align: center;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
+  .btn-info, .customBoutton, .woocommerce-info a.button, body.page-template-template-sell .gform_button.button {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+/* #### effects #### */
 @-webkit-keyframes bounce {
   0%, 100%, 20%, 50%, 80% {
     transform: translateY(0);
@@ -14233,9 +14373,11 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   0%, 20%, 50%, 80% {
     transform: scale(1);
   }
-  40% {
-    transform: scale(1.5);
-  }
+  /* 40% {
+      //-webkit-transform: scale(1.5);
+      //-ms-transform:     scale(1.5);
+      transform:           scale(1.5);
+  }*/
   100% {
     transform: scale(2);
   }
@@ -14244,9 +14386,11 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   0%, 20%, 50%, 80% {
     transform: scale(1);
   }
-  40% {
-    transform: scale(1.5);
-  }
+  /* 40% {
+      //-webkit-transform: scale(1.5);
+      //-ms-transform:     scale(1.5);
+      transform:           scale(1.5);
+  }*/
   100% {
     transform: scale(2);
   }

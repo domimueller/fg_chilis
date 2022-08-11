@@ -34,7 +34,43 @@ if ( is_front_page() ) {
 			<div class="col-md-12 content-area" id="primary">
 
 				<main class="site-main" id="main" role="main">
+
+
+					<!-- ######## Facts Section ########  -->
+
+						<div class="col-sm-12">
+							<div class="row facts-row ">
+								<div class="title-col col-sm-12">
+									<h2>Über uns </h2>
+								</div>	
+
+							<?php
+
+								$args = array(
+			    					'post_type'  => 'domi_facts_cpt',
+			    					'numberposts' => -1,
+			    					'post_status' => 'publish', 
+		    						'orderby' => 'menu_order', 
+		    						'order' => 'ASC', 
+
+								);
+
+
+							$facts = get_posts( $args );
+							
+							?>
+
+							<?php 
+							foreach ($facts as $fact ) {
+								get_template_part( 'loop-templates/content', 'facts' );	
+							}
+							?>
+							</div> <!-- facts row-->
+						</div> <!-- col -->					
 					
+
+
+					<!-- ######## Aktuelles Section ########  -->
 					<?php
 					while ( have_posts() ) {
 						the_post();
@@ -105,6 +141,8 @@ if ( is_front_page() ) {
 					}
 					?>
 					
+
+					<!-- ######## Partners Section ########  -->					
 					<div class="col-sm-12">
 						<div class="row partner-row ">
 							<div class="title-col col-sm-12">
@@ -132,8 +170,7 @@ if ( is_front_page() ) {
 							get_template_part( 'loop-templates/content', 'partners' );	
 						}
 						?>
-						</div> <!-- partner row-->
-					</div> <!-- col -->
+
 
 
 					</div> <!-- postentry row-->

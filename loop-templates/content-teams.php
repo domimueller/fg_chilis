@@ -21,12 +21,6 @@ global $team;
 				<h2><?php echo $team->post_title;?></h2>
 			</header><!-- .entry-header -->	
 			
-			<div class="content-container">
-
-				Standort
-				Sorten
-
-			</div>
 
 			<div class="cite">
 				<blockquote class="blockquote">

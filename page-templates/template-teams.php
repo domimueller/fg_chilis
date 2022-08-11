@@ -45,7 +45,7 @@ if ( is_front_page() ) {
 	    					'post_type'  => 'domi_teammember_cpt',
 	    					'numberposts' => -1,
 	    					'post_status' => 'publish', 
-    						'orderby' => 'menu_order', 
+    						'orderby' => 'rand', 
     						'order' => 'ASC', 
 
 						);

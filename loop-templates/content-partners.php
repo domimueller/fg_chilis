@@ -10,14 +10,10 @@ defined( 'ABSPATH' ) || exit;
 global $partner;
 $partnerMeta = get_fields($partner->ID); 
 
-// different layout for home and "partneren"
-$columnwidth = 'partner-col card-holder' . ' ' . (is_front_page() ? 'col-sm-3' : 'col-sm-6');
-$partnertype =  (is_front_page() ? 'smallpartnerLayout' : 'bigpartnerLayout');
-
 ?>
 
 
-<article class= " <?=$columnwidth . ' ' . $partnertype?>" >
+<article class="partner-col card-holder col-md-6 bigpartnerLayout">
 
 	<div class="entry-content">
 		<div class="card">
@@ -30,8 +26,13 @@ $partnertype =  (is_front_page() ? 'smallpartnerLayout' : 'bigpartnerLayout');
 	 			
 	 			<a href="<?=$partnerMeta["partner_url"]?>" target="_blank">
 	 				<img src="<?=get_the_post_thumbnail_url($partner->ID, 'medium')?>" />
-	 			</a>	
+	 			</a>
 	 		</div>	
+
+
+			<div class="button-container">
+				<a class="customBoutton moreInformation" href="<?=$partnerMeta["partner_url"]?>" target="_blank">  <span>Mehr erfahren</span> <i class="fa-solid fa-up-right-from-square"></i></a>	
+			</div>	 		
 
 		</div>
 	</div>	
