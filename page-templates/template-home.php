@@ -71,40 +71,58 @@ if ( is_front_page() ) {
 
 
 					<!-- ######## Aktuelles Section ########  -->
-					<?php
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
+					<?php
+
+					// only show newly posted news entries
+					$number_months_for_news = get_field('number_months_for_news', 'option');
+					
+					if (!isset($number_months_for_news) or empty($number_months_for_news)):
+						$number_months_for_news = 3;
+					endif;
+
+					$args = array(
+    					'post_type'  => 'post',
+    					'numberposts' => -1,
+    					'post_status' => 'publish', 
+						'orderby' => 'menu_order', 
+						'order' => 'ASC', 
+						'date_query' => array(
+
+									// only show Posts that are not older than x months
+           							array(
+                  						'after' => $number_months_for_news . ' month ago'
+
+            						)										
+
+						)
+					);
+
+					$postlist = get_posts( $args );					
+					
+					if (count($postlist)>0):
+						while ( have_posts() ) {
+							the_post();
+							get_template_part( 'loop-templates/content', 'page' );
+
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) {
+								comments_template();
+							}
 						}
-					}
+					endif;	
 
-					?>
 
-					<?php
 					get_template_part( 'loop-templates/', 'content' );
 					
-						$args = array(
-	    					'post_type'  => 'post',
-	    					'numberposts' => -1,
-	    					'post_status' => 'publish', 
-    						'orderby' => 'menu_order', 
-    						'order' => 'ASC', 
-
-						);
-
-					
-
 					?>
 					
 					
 					<div class="row custom-postentry-row ">
+
 					<?php
 
-					$postlist = get_posts( $args );
+					
 					foreach ($postlist as $postentry ) {
 						 
 
