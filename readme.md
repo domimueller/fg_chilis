@@ -9,4 +9,7 @@ How to Change css/ js
 
 Compatible with Font Awesome Version 5 free icons https://fontawesome.com/v5/search
 
+# Achtung Woocommerce
+Weil Understrap einige Vorlagen von Woocommerce überschreibt und diese veraltet sind, den Ordner woocommerce im understrap theme löschen. Dadurch werden diese Vorlagen nicht verwendet. Muss nach jedem Update wiederholt werden.
+
 

@@ -14304,10 +14304,34 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   -o-border-radius: 3px;
 }
 
+/*active, focus, hover*/
 .customBoutton:hover, body.post-type-archive-inseratposttype .btn-info:hover, body.post-type-archive-inseratposttype .woocommerce-info a.button:hover, .woocommerce-info body.post-type-archive-inseratposttype a.button:hover, body.post-type-archive-inseratposttype .btn-info:focus, body.post-type-archive-inseratposttype .woocommerce-info a.button:focus, .woocommerce-info body.post-type-archive-inseratposttype a.button:focus, body.post-type-archive-inseratposttype .btn-info:active, body.post-type-archive-inseratposttype .woocommerce-info a.button:active, .woocommerce-info body.post-type-archive-inseratposttype a.button:active, .btn-info:not(:disabled):not(.disabled).active, .woocommerce-info a.button:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .woocommerce-info a.button:not(:disabled):not(.disabled):active, .show > .btn-info.dropdown-toggle, .woocommerce-info .show > a.dropdown-toggle.button, body.page-template-template-sell .gform_wrapper .button:hover, body.page-template-template-sell .gform_button:hover, body.page-template-template-sell .gform_button:focus {
   background: #fff !important;
   color: #ba041c !important;
   border-color: #ba041c;
+}
+
+/* #### Deactivate WOOCOMMERCE Stuff #### */
+.woocommerce-breadcrumb, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) .woocommerce-breadcrumb, .woocommerce-ordering, .product_meta, body .wc-block-cart__empty-cart__title.with-empty-cart-icon:before {
+  display: none;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button.alt {
+  background-color: #ba041c;
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price, .woocommerce-Price-amount.amount bdi {
+  color: #212549;
+}
+
+.woocommerce .wc-bacs-bank-details-account-name {
+  color: #212549;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received {
+  margin-bottom: 30px;
 }
 
 /* #### RESPONSIVE #### */

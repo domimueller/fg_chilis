@@ -28,31 +28,37 @@ $chiliDegree = $chiliMeta['chili_Tax_degree'];
 			</header><!-- .entry-header -->	
 			
 
-	 		<div class="location-container">
+	 		<?php
+				
+	 			$locations = get_the_terms($chili->ID, 'standort' );
+
+
+				if ($locations != false && count($locations) > 0):
+					$location_count = count($locations);
+	 			?>	
 	 			
-	 			<h5>Standorte</h5>
-								
-	 			<ul>
-		 			<?php 
+		 			<div class="location-container">
+		 			
+		 				<h5>Standorte</h5>
+									
+			 			<ul>
+				 			<?php 
+				 			if (isset($locations) && !empty($locations)):
+					 			foreach ($locations as $location ):?>
 
-		 			$locations = get_the_terms($chili->ID, 'standort' );
+					 				<li>
+					 					<span><?php echo $location->name;?> </span>
+										<span class="tooltip-holder" data-toggle="tooltip" title="<?=$location->description;?>">
+											<i class="fa-solid fa-circle-info"></i>
+										</span>
+					 				</li> 
+					 			<?php endforeach;
+					 		endif;
+			 				?> 	
+			 			</ul>	
+			 		</div>	
 
-		 			if (isset($locations) && !empty($locations)):
-			 			foreach ($locations as $location ):?>
-
-			 				<li>
-			 					<span><?php echo $location->name;?> </span>
-								<span class="tooltip-holder" data-toggle="tooltip" title="<?=$location->description;?>">
-									<i class="fa-solid fa-circle-info"></i>
-								</span>
-			 				</li> 
-			 			<?php endforeach;
-			 		endif;
-	 				?> 	
-	 			</ul>	
-	 		</div>	
-
-
+			 	<?php endif;?>	
 
 	 		<div class="spicy-degree-container">
 				
@@ -76,7 +82,6 @@ $chiliDegree = $chiliMeta['chili_Tax_degree'];
 					<?php
 					}
 	 			?>
-	 			
 
 	 			<?php
 					
@@ -90,15 +95,23 @@ $chiliDegree = $chiliMeta['chili_Tax_degree'];
 	 			?>					 			
 	 		</div>						 		
 
+			<div class="info-container">
+	 				<p><?php echo $chili->post_content;?>
+	 				</p>
+	 			</div>
+
 	 		<div class="image-container">
 	 			
 	 				<?=get_the_post_thumbnail($chili, 'medium');?> 
 	 		
 	 		</div>	
 
-			<div class="button-container">
-				<a class="customBoutton moreInformation" href="<?=$chiliExternalURL?>" target="_blank"><span>Mehr erfahren</span> <i class="fa-solid fa-up-right-from-square"></i></a>	
-			</div>
+			<?php if (isset($chiliExternalURL) && !empty($chiliExternalURL)):
+			?>
+				<div class="button-container">
+					<a class="customBoutton moreInformation" href="<?=$chiliExternalURL?>" target="_blank"><span>Mehr erfahren</span> <i class="fa-solid fa-up-right-from-square"></i></a>	
+				</div>
+			<?php endif;?>	
 
 		</div>
 	</div>	
