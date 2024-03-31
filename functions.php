@@ -34,3 +34,12 @@ function add_child_theme_textdomain() {
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 include 'inc/customsettings.php';
+
+function register_menus() { 
+    register_nav_menus(
+        array(
+            'domi-custom-footer-menu' => 'Domi Custom Footer Menu',
+        )
+    ); 
+}
+add_action( 'init', 'register_menus' );

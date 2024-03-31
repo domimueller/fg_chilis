@@ -14102,6 +14102,10 @@ footer a.custom-logo-link {
   margin-bottom: 0;
 }
 
+.footer-nav ul li {
+  list-style: none;
+}
+
 /* #### LOGO  #### */
 a.custom-logo-link {
   max-height: 150px;
@@ -14282,7 +14286,9 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   margin-right: 8px;
 }
 
-.customBoutton, .btn-info, .woocommerce-info a.button, body.page-template-template-sell .gform_button.button {
+.customBoutton, .btn-info, .woocommerce-info a.button, body.page-template-template-sell .gform_button.button, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt.disabled, .wp-block-button__link,
+.btn-outline-primary,
+.wpcf7 input[type=submit], body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link) {
   width: 230px;
   cursor: pointer;
   margin-top: 20px;
@@ -14305,15 +14311,38 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
 }
 
 /*active, focus, hover*/
-.customBoutton:hover, body.post-type-archive-inseratposttype .btn-info:hover, body.post-type-archive-inseratposttype .woocommerce-info a.button:hover, .woocommerce-info body.post-type-archive-inseratposttype a.button:hover, body.post-type-archive-inseratposttype .btn-info:focus, body.post-type-archive-inseratposttype .woocommerce-info a.button:focus, .woocommerce-info body.post-type-archive-inseratposttype a.button:focus, body.post-type-archive-inseratposttype .btn-info:active, body.post-type-archive-inseratposttype .woocommerce-info a.button:active, .woocommerce-info body.post-type-archive-inseratposttype a.button:active, .btn-info:not(:disabled):not(.disabled).active, .woocommerce-info a.button:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .woocommerce-info a.button:not(:disabled):not(.disabled):active, .show > .btn-info.dropdown-toggle, .woocommerce-info .show > a.dropdown-toggle.button, body.page-template-template-sell .gform_wrapper .button:hover, body.page-template-template-sell .gform_button:hover, body.page-template-template-sell .gform_button:focus {
+.customBoutton:hover, body.post-type-archive-inseratposttype .btn-info:hover, body.post-type-archive-inseratposttype .woocommerce-info a.button:hover, .woocommerce-info body.post-type-archive-inseratposttype a.button:hover, body.post-type-archive-inseratposttype .btn-info:focus, body.post-type-archive-inseratposttype .woocommerce-info a.button:focus, .woocommerce-info body.post-type-archive-inseratposttype a.button:focus, body.post-type-archive-inseratposttype .btn-info:active, body.post-type-archive-inseratposttype .woocommerce-info a.button:active, .woocommerce-info body.post-type-archive-inseratposttype a.button:active, .btn-info:not(:disabled):not(.disabled).active, .woocommerce-info a.button:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .woocommerce-info a.button:not(:disabled):not(.disabled):active, .show > .btn-info.dropdown-toggle, .woocommerce-info .show > a.dropdown-toggle.button, body.page-template-template-sell .gform_wrapper .button:hover, body.page-template-template-sell .gform_button:hover, body.page-template-template-sell .gform_button:focus, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button.alt:hover, .wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-button__link:active, body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link):hover, body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link):active, body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link):focus, .btn-outline-primary:hover, .wpcf7 input[type=submit]:hover, .btn-outline-primary:active, .wpcf7 input[type=submit]:active, .btn-outline-primary:focus, .wpcf7 input[type=submit]:focus {
   background: #fff !important;
   color: #ba041c !important;
   border-color: #ba041c;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.wp-block-woocommerce-empty-cart-block h2, .add-to-cart-container {
+  margin-bottom: 40px;
+}
+
+.wp-block-woocommerce-empty-cart-block .wc-block-grid__product-add-to-cart .wp-block-button__link {
+  max-width: 100%;
+}
+
+.wc-block-checkout__actions_row .components-button.wc-block-components-checkout-place-order-button {
+  min-width: 350px;
+  margin-bottom: 30px;
 }
 
 /* #### Deactivate WOOCOMMERCE Stuff #### */
-.woocommerce-breadcrumb, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) .woocommerce-breadcrumb, .woocommerce-ordering, .product_meta, body .wc-block-cart__empty-cart__title.with-empty-cart-icon:before {
+.woocommerce-breadcrumb, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) .woocommerce-breadcrumb, .woocommerce-ordering, .product_meta, body .wc-block-cart__empty-cart__title.with-empty-cart-icon:before, body.woocommerce-cart .wc-block-components-totals-item__description.wc-block-components-totals-shipping__via, body.woocommerce-cart .wc-block-components-shipping-rates-control__package, body.woocommerce-checkout .wc-block-components-totals-shipping__via {
   display: none;
+}
+
+body.woocommerce-page .wc-block-components-form .wc-block-components-text-input input[type=text] {
+  border-color: #ba041c;
+}
+
+.woocommerce-checkout input[type=text] {
+  height: 55px;
 }
 
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button.alt {
@@ -14334,6 +14363,22 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   margin-bottom: 30px;
 }
 
+.wp-block-woocommerce-empty-cart-block .wp-block-button__link {
+  margin-bottom: 40px;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt.disabled {
+  margin-top: 0px;
+}
+
+.related.products {
+  float: left;
+}
+
+.button.wc-forward:hover, .button.wc-forward:active, .button.wc-forward:focus {
+  outline-color: transparent !important;
+}
+
 /* #### RESPONSIVE #### */
 /* DESKTOP ONLY */
 @media (min-width: 992px) {
@@ -14352,6 +14397,24 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   }
   .gform_wrapper ul.gform_fields li.gfield.fullsize, body .gform_wrapper ul.gform_fields li.gfield {
     padding-right: 40px;
+  }
+  ul.products .product {
+    float: left;
+    margin: 0 2.9% 2.992em 0;
+    padding: 0;
+    position: relative;
+    width: 22.05%;
+  }
+  ul.products {
+    padding: 0;
+  }
+}
+/* Mobile */
+@media (max-width: 991px) {
+  .wc-block-checkout__actions_row .components-button.wc-block-components-checkout-place-order-button, li.product a.add-to-cart-button, li.product add-to-cart-container {
+    width: auto;
+    min-width: 95%;
+    max-width: 95%;
   }
 }
 /* XS ONLY (Phone) */
