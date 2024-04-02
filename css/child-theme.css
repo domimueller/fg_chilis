@@ -13915,7 +13915,7 @@ nav#main-nav.navbar .navbar-nav .active .nav-link, nav#main-nav.navbar .navbar-n
 
 /* #### home #### */
 /* home nav*/
-body.home nav {
+body.home header nav {
   background-color: transparent !important;
   position: absolute;
   z-index: 999;
@@ -14104,6 +14104,10 @@ footer a.custom-logo-link {
 
 .footer-nav ul li {
   list-style: none;
+}
+
+.first-footer-part {
+  margin-bottom: 40px;
 }
 
 /* #### LOGO  #### */
@@ -14332,7 +14336,7 @@ a:focus, button:focus, .button.alt:focus, input:focus, textarea:focus, input[typ
   margin-bottom: 30px;
 }
 
-/* #### Deactivate WOOCOMMERCE Stuff #### */
+/* ####  WOOCOMMERCE Stuff #### */
 .woocommerce-breadcrumb, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) .woocommerce-breadcrumb, .woocommerce-ordering, .product_meta, body .wc-block-cart__empty-cart__title.with-empty-cart-icon:before, body.woocommerce-cart .wc-block-components-totals-item__description.wc-block-components-totals-shipping__via, body.woocommerce-cart .wc-block-components-shipping-rates-control__package, body.woocommerce-checkout .wc-block-components-totals-shipping__via {
   display: none;
 }
@@ -14379,6 +14383,10 @@ body.woocommerce-page .wc-block-components-form .wc-block-components-text-input 
   outline-color: transparent !important;
 }
 
+.woocommerce ul.products li.product a {
+  max-width: 100%;
+}
+
 /* #### RESPONSIVE #### */
 /* DESKTOP ONLY */
 @media (min-width: 992px) {
@@ -14415,6 +14423,47 @@ body.woocommerce-page .wc-block-components-form .wc-block-components-text-input 
     width: auto;
     min-width: 95%;
     max-width: 95%;
+  }
+  .woocommerce-message .button.wc-forward {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .woocommerce-message::before {
+    top: calc(50% + 15px);
+  }
+  footer .navbar {
+    display: block;
+  }
+  footer .navbar ul {
+    padding: 0;
+  }
+  body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link) {
+    width: 100%;
+  }
+  .wc-block-checkout__add-note .wc-block-components-textarea {
+    min-height: 90px;
+  }
+  body.woocommerce-checkout ul {
+    padding: 0;
+  }
+  .woocommerce ul.order_details li {
+    margin-right: 0;
+    border: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  #cookie-law-info-bar .cli-bar-btn_container a {
+    flex-wrap: wrap-reverse;
+    width: 100%;
+  }
+  #cookie-law-info-bar .cli_settings_button {
+    margin-bottom: 15px !important;
+  }
+  #cookie-law-info-bar .cli-style-v2 .cli-bar-btn_container .cli-plugin-button {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 /* XS ONLY (Phone) */
