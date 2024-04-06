@@ -14085,6 +14085,14 @@ spicy-degree-container img:hover {
   background-color: #ba041c;
 }
 
+footer a.navbar-brand.custom-logo-link {
+  float: right;
+}
+
+footer nav {
+  margin-top: 45px;
+}
+
 .site-footer a {
   margin-right: 5px;
   color: #fff;
@@ -14092,7 +14100,7 @@ spicy-degree-container img:hover {
 
 .first-footer-part a {
   display: inline-block;
-  margin-top: 65px;
+  margin-top: 45px;
 }
 
 footer a.custom-logo-link {
@@ -14453,6 +14461,39 @@ body.woocommerce-page .wc-block-components-form .wc-block-components-text-input 
     padding: 0;
     width: 100%;
     margin-bottom: 15px;
+  }
+  footer a.navbar-brand.custom-logo-link {
+    float: none;
+  }
+  footer nav {
+    padding: 0;
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .footer-nav li {
+    display: block;
+    width: 100%;
+  }
+  .first-footer-part a {
+    margin-top: 20px;
+  }
+  footer .first-footer-part, footer .second-footer-part, footer .third-footer-part {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  footer a.custom-logo-link {
+    max-width: none;
+  }
+  footer a.custom-logo-link img {
+    max-width: 120px;
+    margin-top: 0px;
+  }
+  footer .second-footer-part nav {
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   #cookie-law-info-bar .cli-bar-btn_container a {
     flex-wrap: wrap-reverse;
