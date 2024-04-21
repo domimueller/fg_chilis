@@ -66,16 +66,13 @@ $chiliDegree = $chiliMeta['chili_Tax_degree'];
 	 			
 	 			<?php
 					$active = get_field('options_spicy_active', 'option');
-					$active = $active['url'];
 					
 					$inactive = get_field('options_spicy_inactive', 'option');										
-					$inactive = $inactive['url'];
 				
 
 					for ($i = 1; $i <= $chiliDegree; $i++) {
 
-						$active = get_field('options_spicy_active', 'option');
-						$active = $active['url'];	?>
+						$active = get_field('options_spicy_active', 'option');?>
 						<img src="<?=$active?>" />
 						
 
